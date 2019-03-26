@@ -1,0 +1,82 @@
+node_modules/.bin/mocha e2e --opts e2e/mocha.opts --configuration ios.sim.debug --loglevel verbose     --grep :android: --invert      --artifacts-location "artifacts/ios.sim.debug.2019-03-26 19-32-22Z"  
+
+detox[27344] INFO:  [DetoxServer.js] [32mserver listening on localhost:57131...[39m
+detox[27344] DEBUG: [AsyncWebSocket.js/WEBSOCKET_OPEN] [36mopened web socket to: ws://localhost:57131[39m
+detox[27344] DEBUG: [DetoxServer.js/LOGIN] [36mrole=tester, sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+detox[27344] DEBUG: [DetoxServer.js/LOGIN_SUCCESS] [36mrole=tester, sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #0] [36m/usr/bin/xcrun simctl list -j[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #1] [36mapplesimutils --list --byType "iPhone 8" --byOS "12.1"[39m
+detox[27344] DEBUG: [exec.js/EXEC_TRY, #1] [36mSearching for device matching iPhone 8...[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #2] [36mapplesimutils --list --byId "9386A65B-9F31-440B-8BE0-7CDA984D8DB4"[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #3] [36m/usr/bin/xcrun simctl uninstall 9386A65B-9F31-440B-8BE0-7CDA984D8DB4 org.reactjs.native.example.DetoxAnimationExample[39m
+detox[27344] DEBUG: [exec.js/EXEC_TRY, #3] [36mUninstalling org.reactjs.native.example.DetoxAnimationExample...[39m
+detox[27344] DEBUG: [exec.js/EXEC_SUCCESS, #3] [36morg.reactjs.native.example.DetoxAnimationExample uninstalled[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #4] [36m/usr/bin/xcrun simctl install 9386A65B-9F31-440B-8BE0-7CDA984D8DB4 "/Users/me/DetoxAnimationExample/ios/build/Build/Products/Debug-iphonesimulator/DetoxAnimationExample.app"[39m
+detox[27344] DEBUG: [exec.js/EXEC_TRY, #4] [36mInstalling /Users/me/DetoxAnimationExample/ios/build/Build/Products/Debug-iphonesimulator/DetoxAnimationExample.app...[39m
+detox[27344] DEBUG: [exec.js/EXEC_TRY, #4] [36mInstalling /Users/me/DetoxAnimationExample/ios/build/Build/Products/Debug-iphonesimulator/DetoxAnimationExample.app...[39m
+detox[27344] DEBUG: [exec.js/EXEC_SUCCESS, #4] [36m/Users/me/DetoxAnimationExample/ios/build/Build/Products/Debug-iphonesimulator/DetoxAnimationExample.app installed[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #5] [36m/usr/bin/xcrun simctl terminate 9386A65B-9F31-440B-8BE0-7CDA984D8DB4 org.reactjs.native.example.DetoxAnimationExample[39m
+detox[27344] DEBUG: [exec.js/EXEC_TRY, #5] [36mTerminating org.reactjs.native.example.DetoxAnimationExample...[39m
+detox[27344] DEBUG: [exec.js/EXEC_SUCCESS, #5] [36morg.reactjs.native.example.DetoxAnimationExample terminated[39m
+detox[27344] DEBUG: [exec.js/EXEC_CMD, #6] [36m/bin/cat /dev/null >/Users/dangreane/Library/Developer/CoreSimulator/Devices/9386A65B-9F31-440B-8BE0-7CDA984D8DB4/data/tmp/detox.last_launch_app_log.out 2>/Users/dangreane/Library/Developer/CoreSimulator/Devices/9386A65B-9F31-440B-8BE0-7CDA984D8DB4/data/tmp/detox.last_launch_app_log.err && SIMCTL_CHILD_DYLD_INSERT_LIBRARIES="/Users/dangreane/Library/Detox/ios/84cf08cd618ebc9ca879a1e20d2d93942cab31e7/Detox.framework/Detox" /usr/bin/xcrun simctl launch --stdout=/tmp/detox.last_launch_app_log.out --stderr=/tmp/detox.last_launch_app_log.err 9386A65B-9F31-440B-8BE0-7CDA984D8DB4 org.reactjs.native.example.DetoxAnimationExample --args -detoxServer ws://localhost:57131 -detoxSessionId b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+detox[27344] DEBUG: [exec.js/EXEC_TRY, #6] [36mLaunching org.reactjs.native.example.DetoxAnimationExample...[39m
+detox[27344] INFO:  [AppleSimUtils.js] [32morg.reactjs.native.example.DetoxAnimationExample launched. The stdout and stderr logs were recreated, you can watch them with:[39m
+[32m        tail -F /Users/dangreane/Library/Developer/CoreSimulator/Devices/9386A65B-9F31-440B-8BE0-7CDA984D8DB4/data/tmp/detox.last_launch_app_log.{out,err}[39m
+detox[27344] DEBUG: [DetoxServer.js/CANNOT_FORWARD] [36mrole=testee not connected, cannot fw action (sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b)[39m
+detox[27344] DEBUG: [DetoxServer.js/LOGIN] [36mrole=testee, sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+detox[27344] DEBUG: [DetoxServer.js/LOGIN_SUCCESS] [36mrole=testee, sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+  Example animation bug
+    1) should show welcome and animate text
+Kill the detox cli command now, and re-launch the app in the simulator
+    ✓ should do nothing (10002ms)
+
+
+  1 passing (22s)
+  1 failing
+
+  1) Example animation bug
+       should show welcome and animate text:
+     Error: Error: An assertion failed.
+Exception with Assertion: {
+  "Assertion Criteria":  "assertWithMatcher:matcherForSufficientlyVisible(>=0.750000)",
+  "Element Matcher":  "((!(kindOfClass('RCTScrollView')) && (((kindOfClass('UILabel') || kindOfClass('UITextField') || kindOfClass('UITextView')) && hasText('This should animate in!')) || (kindOfClass('RCTTextView') && an object with accessibilityLabel "This should animate in!"))) || (((kindOfClass('UIView') || respondsToSelector(accessibilityContainer)) && parentThatMatches(kindOfClass('RCTScrollView'))) && ((kindOfClass('UIView') || respondsToSelector(accessibilityContainer)) && parentThatMatches((((kindOfClass('UILabel') || kindOfClass('UITextField') || kindOfClass('UITextView')) && hasText('This should animate in!')) || (kindOfClass('RCTTextView') && an object with accessibilityLabel "This should animate in!"))))))"
+}
+
+
+Error Trace: [
+  {
+    "Description":  "Assertion with matcher [M] failed: UI element [E] failed to match the following matcher(s): [S]",
+    "Description Glossary":    {
+      "M":  "matcherForSufficientlyVisible(>=0.750000)",
+      "E":  "<RCTTextView:0x7ffa92620190; AX=Y; AX.label='This should animate in!'; AX.frame={{113, 347}, {150, 17.5}}; AX.activationPoint={188, 355.75}; AX.traits='UIAccessibilityTraitStaticText'; AX.focused='N'; frame={{0, 0}, {150, 17.5}}; alpha=1>",
+      "S":  "matcherForSufficientlyVisible(>=0.750000)"
+    },
+    "Error Domain":  "com.google.earlgrey.ElementInteractionErrorDomain",
+    "Error Code":  "3",
+    "File Name":  "GREYAssertions.m",
+    "Function Name":  "+[GREYAssertions grey_createAssertionWithMatcher:]_block_invoke",
+    "Line":  "75"
+  }
+]
+
+Hierarchy: <UIWindow:0x7ffa9242c5e0; AX=N; AX.frame={{0, 0}, {375, 667}}; AX.activationPoint={187.5, 333.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{0, 0}, {375, 667}}; opaque; alpha=1>
+  |--<RCTRootView:0x7ffa92415990; AX=N; AX.frame={{0, 0}, {375, 667}}; AX.activationPoint={187.5, 333.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{0, 0}, {375, 667}}; opaque; alpha=1>
+  |  |--<RCTRootContentView:0x7ffa924366a0; AX=N; AX.label='Welcome to React Native! This should animate in!'; AX.frame={{0, 0}, {375, 667}}; AX.activationPoint={187.5, 333.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{0, 0}, {375, 667}}; opaque; alpha=1>
+  |  |  |--<RCTView:0x7ffa92629550; AX=N; AX.label='Welcome to React Native! This should animate in!'; AX.frame={{0, 0}, {375, 667}}; AX.activationPoint={187.5, 333.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{0, 0}, {375, 667}}; opaque; alpha=1>
+  |  |  |  |--<RCTView:0x7ffa92605b60; AX=N; AX.label='Welcome to React Native! This should animate in!'; AX.frame={{0, 0}, {375, 667}}; AX.activationPoint={187.5, 333.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{0, 0}, {375, 667}}; opaque; alpha=1>
+  |  |  |  |  |--<RCTView:0x7ffa92626eb0; AX=N; AX.label='Welcome to React Native! This should animate in!'; AX.frame={{0, 0}, {375, 667}}; AX.activationPoint={187.5, 333.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{0, 0}, {375, 667}}; opaque; alpha=1>
+  |  |  |  |  |  |--<RCTView:0x7ffa92623730; AX=N; AX.label='This should animate in!'; AX.frame={{113, 347}, {149, 17}}; AX.activationPoint={187.5, 355.5}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{113, 347}, {149, 17}}; opaque; alpha=0>
+  |  |  |  |  |  |  |--<RCTTextView:0x7ffa92620190; AX=Y; AX.label='This should animate in!'; AX.frame={{113, 347}, {150, 17.5}}; AX.activationPoint={188, 355.75}; AX.traits='UIAccessibilityTraitStaticText'; AX.focused='N'; frame={{0, 0}, {150, 17.5}}; alpha=1>
+  |  |  |  |  |  |--<RCTView:0x7ffa92606ff0; AX=N; AX.label='Welcome to React Native!'; AX.frame={{65.5, 303}, {244, 44}}; AX.activationPoint={187.5, 325}; AX.traits='UIAccessibilityTraitNone'; AX.focused='N'; frame={{65.5, 303}, {244, 44}}; opaque; alpha=1>
+  |  |  |  |  |  |  |--<RCTTextView:0x7ffa9260b410; AX=Y; AX.label='Welcome to React Native!'; AX.frame={{75.5, 313}, {224, 24.5}}; AX.activationPoint={187.5, 325.25}; AX.traits='UIAccessibilityTraitStaticText'; AX.focused='N'; frame={{10, 10}, {224, 24.5}}; alpha=1>
+      at Client.execute (node_modules/detox/src/client/Client.js:80:28)
+      at InvocationManager.execute (node_modules/detox/src/invoke.js:11:33)
+      at MatcherAssertionInteraction.execute (node_modules/detox/src/ios/expect.js:202:29)
+      at ExpectElement.toBeVisible (node_modules/detox/src/ios/expect.js:354:87)
+      at Context.it (e2e/firstTest.spec.js:8:63)
+
+
+
+detox[27344] DEBUG: [DetoxServer.js/DISCONNECT] [36mrole=tester, sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+detox[27344] DEBUG: [DetoxServer.js/DISCONNECT] [36mrole=testee, sessionId=b4aa3043-e13a-7fc4-b0ae-ef1b2d80574b[39m
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
